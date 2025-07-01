@@ -1,0 +1,6 @@
+@NetWares_HostAddress = http://localhost:5037
+
+GET {{NetWares_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,54 @@
+## Build output
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+## VSCode
+.vscode/
+
+## Rider IDE
+.idea/
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Publish output
+publish/
+wwwroot/dist/
+wwwroot/node_modules/
+*.publishsettings
+
+## Logs
+*.log
+
+## Environment files
+appsettings.Development.json
+appsettings.Local.json
+.env
+.env.*
+
+## Entity Framework
+Migrations/
+
+## Databases
+*.db
+*.sqlite
+
+## Node packages
+node_modules/
+bower_components/
+
+## macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
