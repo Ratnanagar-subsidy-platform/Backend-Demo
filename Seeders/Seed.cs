@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Identity;
+using NetWares.DTOs;
 using NetWares.Interfaces.Repository;
 using NetWares.Models;
 
@@ -232,6 +233,276 @@ namespace NetWares.Seeders
                     await userManager.AddToRoleAsync(user, "User");
             }
         }
-
+        public static async Task SeedSubsidyEntryAsync(ISubsidyEntryRepository repository)
+        {
+            var subsidyEntries = new List<SubsidyEntry>
+            {
+                new SubsidyEntry
+                {
+                    SubsidyId = 1,
+                    SubsidyTitle = "Agriculture Subsidy",
+                    FullName = "Ram Bahadur Thapa",
+                    CitizenshipNumber = "123456789",
+                    PhoneNumber = "9800000001",
+                    Email = "ram.thapa@example.com",
+                    TemporaryAddress = "Kathmandu, Bagmati",
+                    PermanentAddress = "Gorkha, Gandaki",
+                    Municipality = "Gorkha Municipality",
+                    Ward = "5",
+                    Tole = "Simalchaur",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1985, 5, 15, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Male",
+                    SubsidyDemandLetterFilePath = "files/demand/ram.pdf",
+                    PaperDocumentFilePath = "files/docs/ram.pdf",
+                    NeededAmount = 80000,
+                    GotAmount = 50000,
+                    FundSettlementStatus = "Partial",
+                    BankName = "Nepal Bank",
+                    AccountName = "Ram Bahadur Thapa",
+                    AccountNumber = "00123456789",
+                    BankBranch = "Gorkha"
+                },
+                new SubsidyEntry
+                {
+                    SubsidyId = 1,
+                    SubsidyTitle = "Agriculture Subsidy",
+                    FullName = "Sita Kumari Magar",
+                    CitizenshipNumber = "987654321",
+                    PhoneNumber = "9800000002",
+                    Email = "sita.magar@example.com",
+                    TemporaryAddress = "Lalitpur, Bagmati",
+                    PermanentAddress = "Lamjung, Gandaki",
+                    Municipality = "Lamjung Rural Municipality",
+                    Ward = "3",
+                    Tole = "Dharapani",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1990, 8, 20, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female",
+                    SubsidyDemandLetterFilePath = "files/demand/sita.pdf",
+                    PaperDocumentFilePath = "files/docs/sita.pdf",
+                    NeededAmount = 100000,
+                    GotAmount = 100000,
+                    FundSettlementStatus = "Settled",
+                    BankName = "NMB Bank",
+                    AccountName = "Sita Kumari Magar",
+                    AccountNumber = "00987654321",
+                    BankBranch = "Lamjung"
+                },
+                new SubsidyEntry
+                {
+                    SubsidyId = 2,
+                    SubsidyTitle = "Women Empowerment Grant",
+                    FullName = "Anjana Shrestha",
+                    CitizenshipNumber = "567891234",
+                    PhoneNumber = "9800000003",
+                    Email = "anjana.shrestha@example.com",
+                    TemporaryAddress = "Pokhara, Gandaki",
+                    PermanentAddress = "Pokhara, Gandaki",
+                    Municipality = "Pokhara Metropolitan",
+                    Ward = "12",
+                    Tole = "New Road",
+                    Occupation = "Entrepreneur",
+                    DateOfBirth = new DateTime(1995, 3, 10, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female",
+                    SubsidyDemandLetterFilePath = "files/demand/anjana.pdf",
+                    PaperDocumentFilePath = "files/docs/anjana.pdf",
+                    NeededAmount = 50000,
+                    GotAmount = 50000,
+                    FundSettlementStatus = "Settled",
+                    BankName = "Global IME Bank",
+                    AccountName = "Anjana Shrestha",
+                    AccountNumber = "1234509876",
+                    BankBranch = "Pokhara"
+                },
+                new SubsidyEntry
+                {
+                    SubsidyId = 2,
+                    SubsidyTitle = "Women Empowerment Grant",
+                    FullName = "Bimala Rana",
+                    CitizenshipNumber = "789012345",
+                    PhoneNumber = "9800000004",
+                    Email = "bimala.rana@example.com",
+                    TemporaryAddress = "Chitwan, Bagmati",
+                    PermanentAddress = "Chitwan, Bagmati",
+                    Municipality = "Bharatpur Metropolitan",
+                    Ward = "7",
+                    Tole = "Hakim Chowk",
+                    Occupation = "Shopkeeper",
+                    DateOfBirth = new DateTime(1992, 12, 5, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female",
+                    SubsidyDemandLetterFilePath = "files/demand/bimala.pdf",
+                    PaperDocumentFilePath = "files/docs/bimala.pdf",
+                    NeededAmount = 40000,
+                    GotAmount = 35000,
+                    FundSettlementStatus = "Partial",
+                    BankName = "Sanima Bank",
+                    AccountName = "Bimala Rana",
+                    AccountNumber = "0034567890",
+                    BankBranch = "Chitwan"
+                },
+                new SubsidyEntry
+                {
+                    SubsidyId = 1,
+                    SubsidyTitle = "Agriculture Subsidy",
+                    FullName = "Dinesh Bhandari",
+                    CitizenshipNumber = "654321987",
+                    PhoneNumber = "9800000005",
+                    Email = "dinesh.bhandari@example.com",
+                    TemporaryAddress = "Biratnagar, Province 1",
+                    PermanentAddress = "Morang, Province 1",
+                    Municipality = "Biratnagar Metropolitan",
+                    Ward = "9",
+                    Tole = "Main Road",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1988, 4, 25, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Male",
+                    SubsidyDemandLetterFilePath = "files/demand/dinesh.pdf",
+                    PaperDocumentFilePath = "files/docs/dinesh.pdf",
+                    NeededAmount = 90000,
+                    GotAmount = 60000,
+                    FundSettlementStatus = "Partial",
+                    BankName = "NIC Asia Bank",
+                    AccountName = "Dinesh Bhandari",
+                    AccountNumber = "0076543210",
+                    BankBranch = "Biratnagar"
+                }
+            };
+            foreach (var entry in subsidyEntries)
+            {
+                await repository.AddAsync(entry);
+            }
+            await repository.SaveChangesAsync();
+        }
+        public static async Task SeedTrainingParticipate(ITrainingParticipantRepository repository)
+        {
+            var trainingParticipants = new List<TrainingParticipant>
+            {
+                new TrainingParticipant
+                {
+                    TrainingId = 1,
+                    TrainingTitle = "Agriculture Basics",
+                    FullName = "Ram Bahadur Thapa",
+                    CitizenshipNumber = "123456789",
+                    PhoneNumber = "9800000001",
+                    Email = "ram.thapa@example.com",
+                    TemporaryAddress = "Kathmandu, Bagmati",
+                    PermanentAddress = "Gorkha, Gandaki",
+                    Municipality = "Gorkha Municipality",
+                    Ward = "5",
+                    Tole = "Simalchaur",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1985, 5, 15, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Male"
+                },
+                new TrainingParticipant
+                {
+                    TrainingId = 2,
+                    TrainingTitle = "Agro Business Workshop",
+                    FullName = "Sita Kumari Magar",
+                    CitizenshipNumber = "987654321",
+                    PhoneNumber = "9800000002",
+                    Email = "sita.magar@example.com",
+                    TemporaryAddress = "Lalitpur, Bagmati",
+                    PermanentAddress = "Lamjung, Gandaki",
+                    Municipality = "Lamjung Rural Municipality",
+                    Ward = "3",
+                    Tole = "Dharapani",
+                    Occupation = "Entrepreneur",
+                    DateOfBirth = new DateTime(1990, 8, 20, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female"
+                },
+                new TrainingParticipant
+                {
+                    TrainingId = 3,
+                    TrainingTitle = "Animal Husbandry Training",
+                    FullName = "Dinesh Bhandari",
+                    CitizenshipNumber = "654321987",
+                    PhoneNumber = "9800000003",
+                    Email = "dinesh.bhandari@example.com",
+                    TemporaryAddress = "Biratnagar, Province 1",
+                    PermanentAddress = "Morang, Province 1",
+                    Municipality = "Biratnagar Metropolitan",
+                    Ward = "9",
+                    Tole = "Main Road",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1988, 4, 25, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Male"
+                },
+                new TrainingParticipant
+                {
+                    TrainingId = 4,
+                    TrainingTitle = "Organic Farming Workshop",
+                    FullName = "Anjana Shrestha",
+                    CitizenshipNumber = "567891234",
+                    PhoneNumber = "9800000004",
+                    Email = "anjana.shrestha@example.com",
+                    TemporaryAddress = "Pokhara, Gandaki",
+                    PermanentAddress = "Pokhara, Gandaki",
+                    Municipality = "Pokhara Metropolitan",
+                    Ward = "12",
+                    Tole = "New Road",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1995, 3, 10, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female"
+                },
+                new TrainingParticipant
+                {
+                    TrainingId = 5,
+                    TrainingTitle = "Entrepreneurship Development",
+                    FullName = "Manisha Gurung",
+                    CitizenshipNumber = "543210987",
+                    PhoneNumber = "9800000005",
+                    Email = "manisha.gurung@example.com",
+                    TemporaryAddress = "Butwal, Lumbini",
+                    PermanentAddress = "Syangja, Gandaki",
+                    Municipality = "Butwal Sub-Metropolitan",
+                    Ward = "10",
+                    Tole = "Traffic Chowk",
+                    Occupation = "Businesswoman",
+                    DateOfBirth = new DateTime(1993, 9, 22, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female"
+                },
+                new TrainingParticipant
+                {
+                    TrainingId = 6,
+                    TrainingTitle = "Bee Keeping Training",
+                    FullName = "Kamal Rai",
+                    CitizenshipNumber = "234567890",
+                    PhoneNumber = "9800000006",
+                    Email = "kamal.rai@example.com",
+                    TemporaryAddress = "Hetauda, Bagmati",
+                    PermanentAddress = "Makwanpur, Bagmati",
+                    Municipality = "Hetauda Sub-Metropolitan",
+                    Ward = "4",
+                    Tole = "Basundhara",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1983, 11, 9, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Male"
+                },
+                new TrainingParticipant
+                {
+                    TrainingId = 7,
+                    TrainingTitle = "Horticulture Advanced",
+                    FullName = "Sarita Chaudhary",
+                    CitizenshipNumber = "876543210",
+                    PhoneNumber = "9800000007",
+                    Email = "sarita.chaudhary@example.com",
+                    TemporaryAddress = "Nepalgunj, Lumbini",
+                    PermanentAddress = "Bardiya, Lumbini",
+                    Municipality = "Nepalgunj Sub-Metropolitan",
+                    Ward = "2",
+                    Tole = "Dhamboji",
+                    Occupation = "Farmer",
+                    DateOfBirth = new DateTime(1991, 7, 30, 0, 0, 0, DateTimeKind.Utc),
+                    Gender = "Female"
+                }
+            };
+            foreach (var entry in trainingParticipants)
+            {
+                await repository.AddAsync(entry);
+            }
+            await repository.SaveChangesAsync();
+        }
     }
 }

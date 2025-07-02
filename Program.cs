@@ -49,10 +49,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
-{
-    var serviceProvider = scope.ServiceProvider;
-    var subsidyService = serviceProvider.GetRequiredService<ITrainingRepository>();
-    await Seed.SeedTrainingAsync(subsidyService);
-}
+// using (var scope = app.Services.CreateScope())
+// {
+//     var serviceProvider = scope.ServiceProvider;
+//     var subsidyService = serviceProvider.GetRequiredService<ITrainingParticipantRepository>();
+//     await Seed.SeedTrainingParticipate(subsidyService);
+// }
 app.Run();
