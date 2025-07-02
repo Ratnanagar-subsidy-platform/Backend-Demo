@@ -3,8 +3,8 @@ namespace NetWares.Models
     public class TrainingParticipant
     {
         public int Id { get; set; }
-        public required string TrainingTitle { get; set; }
-
+        public required int TrainingId { get; set; }
+        public string TrainingTitle { get; set; } = null!;
         public required string FullName { get; set; }
         public required string CitizenshipNumber { get; set; }
         public required string PhoneNumber { get; set; }

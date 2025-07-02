@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using NetWares.Dtos;
 using NetWares.Models;
 namespace NetWares.Data;
 
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+public class AppDbContext(DbContextOptions<AppDbContext> options)
+    : IdentityDbContext<User>(options)
 {
     public DbSet<Subsidy> Subsidies { get; set; }
     public DbSet<SubsidyEntry> SubsidyEntries { get; set; }
@@ -51,7 +54,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         {
             entity.HasKey(e => e.Id);
 
-            entity.Property(e => e.TrainingTitle)
+            entity.Property(e => e.SubsidyTitle)
                 .IsRequired()
                 .HasMaxLength(200);
 

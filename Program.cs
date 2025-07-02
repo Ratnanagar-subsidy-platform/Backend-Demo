@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Identity;
 using NetWares.Extensions;
+using NetWares.Interfaces.Repository;
+using NetWares.Interfaces.Service;
+using NetWares.Models;
+using NetWares.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddDependencyInjection(builder.Configuration);
 
@@ -46,5 +49,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    var subsidyService = serviceProvider.GetRequiredService<ITrainingRepository>();
+    await Seed.SeedTrainingAsync(subsidyService);
+}
 app.Run();

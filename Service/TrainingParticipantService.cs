@@ -29,6 +29,7 @@ namespace NetWares.Service
 
         public async Task AddAsync(CreateTrainingParticipantDto createTrainingParticipantDto)
         {
+                    //  validate if a subsidy entry already exists for the goven citizenship
             var trainingParticipant = createTrainingParticipantDto.ToEntity();
             await _repository.AddAsync(trainingParticipant);
             await _repository.SaveChangesAsync();

@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NetWares.Configurations;
@@ -7,6 +8,7 @@ using NetWares.Data;
 using NetWares.Exceptions;
 using NetWares.Interfaces.Repository;
 using NetWares.Interfaces.Service;
+using NetWares.Models;
 using NetWares.Repository;
 using NetWares.Service;
 
@@ -26,6 +28,9 @@ namespace NetWares.Extensions
             services.AddServices();
             services.AddControllers();
             services.Configure<JwtOption>(configuration.GetSection("JwtConfig"));
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
         }
 
 

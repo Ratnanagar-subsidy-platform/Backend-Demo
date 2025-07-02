@@ -10,6 +10,7 @@ namespace NetWares.Mappers
             return new TrainingParticipant
             {
                 TrainingTitle = dto.TrainingTitle,
+                TrainingId = dto.TrainingId,
                 FullName = dto.FullName,
                 CitizenshipNumber = dto.CitizenshipNumber,
                 PhoneNumber = dto.PhoneNumber,
@@ -37,6 +38,7 @@ namespace NetWares.Mappers
             entity.Municipality = dto.Municipality;
             entity.Ward = dto.Ward;
             entity.Tole = dto.Tole;
+            entity.TrainingId = dto.TrainingId;
             entity.Occupation = dto.Occupation;
             entity.DateOfBirth = dto.DateOfBirth;
             entity.Gender = dto.Gender;
@@ -48,6 +50,7 @@ namespace NetWares.Mappers
             return new ReadTrainingParticipantDto
             {
                 Id = entity.Id,
+                TrainingId = entity.TrainingId,
                 TrainingTitle = entity.TrainingTitle,
                 FullName = entity.FullName,
                 CitizenshipNumber = entity.CitizenshipNumber,

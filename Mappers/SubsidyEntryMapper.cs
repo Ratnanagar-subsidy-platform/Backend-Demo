@@ -9,7 +9,8 @@ namespace NetWares.Mappers
         {
             var entity = new SubsidyEntry
             {
-                TrainingTitle = dto.TrainingTitle,
+                SubsidyTitle = dto.SubsidyTitle,
+                SubsidyId = dto.SubsidyId,
                 FullName = dto.FullName,
                 CitizenshipNumber = dto.CitizenshipNumber,
                 PhoneNumber = dto.PhoneNumber,
@@ -39,7 +40,7 @@ namespace NetWares.Mappers
 
         public static void UpdateEntity(this SubsidyEntry entity, UpdateSubsidyEntryDto dto)
         {
-            entity.TrainingTitle = dto.TrainingTitle;
+            entity.SubsidyTitle = dto.SubsidyTitle;
             entity.FullName = dto.FullName;
             entity.CitizenshipNumber = dto.CitizenshipNumber;
             entity.PhoneNumber = dto.PhoneNumber;
@@ -49,6 +50,7 @@ namespace NetWares.Mappers
             entity.Municipality = dto.Municipality;
             entity.Ward = dto.Ward;
             entity.Tole = dto.Tole;
+            entity.SubsidyId = dto.SubsidyId;
             entity.Occupation = dto.Occupation;
             entity.DateOfBirth = dto.DateOfBirth;
             entity.Gender = dto.Gender;
@@ -70,7 +72,8 @@ namespace NetWares.Mappers
             return new ReadSubsidyEntryDto
             {
                 Id = entity.Id,
-                TrainingTitle = entity.TrainingTitle,
+                SubsidyTitle = entity.SubsidyTitle,
+                SubsidyId = entity.SubsidyId,
                 FullName = entity.FullName,
                 CitizenshipNumber = entity.CitizenshipNumber,
                 PhoneNumber = entity.PhoneNumber,

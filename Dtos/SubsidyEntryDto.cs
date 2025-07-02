@@ -2,7 +2,8 @@ namespace NetWares.DTOs
 {
     public class CreateSubsidyEntryDto
     {
-        public string TrainingTitle { get; set; } = null!;
+        public int SubsidyId { get; set; }
+        public string SubsidyTitle { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string CitizenshipNumber { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
@@ -36,7 +37,8 @@ namespace NetWares.DTOs
     public class UpdateSubsidyEntryDto
     {
         public int Id { get; set; }
-        public string TrainingTitle { get; set; } = null!;
+        public int SubsidyId { get; set; }
+        public string SubsidyTitle { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string CitizenshipNumber { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
@@ -70,7 +72,8 @@ namespace NetWares.DTOs
     public class ReadSubsidyEntryDto
     {
         public int Id { get; set; }
-        public string TrainingTitle { get; set; } = null!;
+        public int SubsidyId { get; set; }
+        public string SubsidyTitle { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string CitizenshipNumber { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;

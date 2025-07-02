@@ -2,6 +2,7 @@ namespace NetWares.DTOs
 {
     public class CreateTrainingParticipantDto
     {
+        public int TrainingId { get; set; }
         public string TrainingTitle { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string CitizenshipNumber { get; set; } = null!;
@@ -20,6 +21,7 @@ namespace NetWares.DTOs
     public class UpdateTrainingParticipantDto
     {
         public int Id { get; set; }
+        public int TrainingId { get; set; }
         public string TrainingTitle { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string CitizenshipNumber { get; set; } = null!;
@@ -38,6 +40,7 @@ namespace NetWares.DTOs
     public class ReadTrainingParticipantDto
     {
         public int Id { get; set; }
+        public int TrainingId { get; set; }
         public string TrainingTitle { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string CitizenshipNumber { get; set; } = null!;

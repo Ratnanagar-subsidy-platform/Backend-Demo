@@ -5,13 +5,13 @@ using NetWares.Models;
 
 namespace NetWares.Repository
 {
-public class SubsidyRepository : GenericRepository<Subsidy>, ISubsidyRepository
-{
-    public SubsidyRepository(AppDbContext context) : base(context) { }
-
-    public async Task<Subsidy?> GetByTitleAsync(string title)
+    public class SubsidyRepository : GenericRepository<Subsidy>, ISubsidyRepository
     {
-        return await _dbSet.FirstOrDefaultAsync(s => s.Title == title);
-    }
+        public SubsidyRepository(AppDbContext context) : base(context) { }
+
+        public async Task<Subsidy?> GetByTitleAsync(string title)
+        {
+            return await _dbSet.FirstOrDefaultAsync(s => s.Title == title);
+        }
 }
 }
