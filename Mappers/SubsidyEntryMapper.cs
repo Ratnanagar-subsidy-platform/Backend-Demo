@@ -21,7 +21,7 @@ namespace NetWares.Mappers
                 Ward = dto.Ward,
                 Tole = dto.Tole,
                 Occupation = dto.Occupation,
-                DateOfBirth = dto.DateOfBirth,
+                DateOfBirth = dto.DateOfBirth.ToUniversalTime(),
                 Gender = dto.Gender,
                 SubsidyDemandLetterFilePath = dto.SubsidyDemandLetterFilePath,
                 PaperDocumentFilePath = dto.PaperDocumentFilePath,
@@ -52,7 +52,7 @@ namespace NetWares.Mappers
             entity.Tole = dto.Tole;
             entity.SubsidyId = dto.SubsidyId;
             entity.Occupation = dto.Occupation;
-            entity.DateOfBirth = dto.DateOfBirth;
+            entity.DateOfBirth = dto.DateOfBirth.ToUniversalTime();
             entity.Gender = dto.Gender;
             entity.SubsidyDemandLetterFilePath = dto.SubsidyDemandLetterFilePath;
             entity.PaperDocumentFilePath = dto.PaperDocumentFilePath;

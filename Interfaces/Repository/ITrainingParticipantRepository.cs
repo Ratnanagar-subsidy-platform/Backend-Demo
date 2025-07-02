@@ -4,6 +4,6 @@ namespace NetWares.Interfaces.Repository
 {
     public interface ITrainingParticipantRepository : IGenericRepository<TrainingParticipant>
     {
-        // Custom methods if needed
+        Task<TrainingParticipant?> GetByCitizenship(string citizenship);
     }
 }

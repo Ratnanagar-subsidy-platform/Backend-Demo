@@ -1,3 +1,4 @@
+using System.Data;
 using NetWares.DTOs;
 using NetWares.Interfaces;
 using NetWares.Interfaces.Repository;
@@ -29,7 +30,8 @@ public class SubsidyEntryService : ISubsidyEntryService
 
     public async Task AddAsync(CreateSubsidyEntryDto createSubsidyEntryDto)
     {
-        //  validate if a subsidy entry already exists for the goven citizenship
+        var existingData = await _repository.GetByCitizenship(createSubsidyEntryDto.CitizenshipNumber);
+        if (existingData is not null) throw new DuplicateNameException("Data for provided citizenship already exists");
         var subsidyEntry = createSubsidyEntryDto.ToEntity();
         await _repository.AddAsync(subsidyEntry);
         await _repository.SaveChangesAsync();

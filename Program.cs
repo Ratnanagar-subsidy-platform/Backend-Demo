@@ -1,10 +1,6 @@
 using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Identity;
 using NetWares.Extensions;
-using NetWares.Interfaces.Repository;
-using NetWares.Interfaces.Service;
-using NetWares.Models;
-using NetWares.Seeders;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -13,8 +13,8 @@ namespace NetWares.Mappers
                 TrainingCategory = dto.TrainingCategory,
                 TrainerName = dto.TrainerName,
                 TrainingAddress = dto.TrainingAddress,
-                StartDate = dto.StartDate,
-                EndDate = dto.EndDate,
+                StartDate = dto.StartDate.ToUniversalTime(),
+                EndDate = dto.EndDate.ToUniversalTime(),
                 TrainingCost = dto.TrainingCost,
                 TrainingCapacity = dto.TrainingCapacity
             };
@@ -26,8 +26,8 @@ namespace NetWares.Mappers
             entity.TrainingCategory = dto.TrainingCategory;
             entity.TrainerName = dto.TrainerName;
             entity.TrainingAddress = dto.TrainingAddress;
-            entity.StartDate = dto.StartDate;
-            entity.EndDate = dto.EndDate;
+            entity.StartDate = dto.StartDate.ToUniversalTime();
+            entity.EndDate = dto.EndDate.ToUniversalTime();
             entity.TrainingCost = dto.TrainingCost;
             entity.TrainingCapacity = dto.TrainingCapacity;
         }

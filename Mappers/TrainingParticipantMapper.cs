@@ -21,7 +21,7 @@ namespace NetWares.Mappers
                 Ward = dto.Ward,
                 Tole = dto.Tole,
                 Occupation = dto.Occupation,
-                DateOfBirth = dto.DateOfBirth,
+                DateOfBirth = dto.DateOfBirth.ToUniversalTime(),
                 Gender = dto.Gender,
             };
         }
@@ -40,7 +40,7 @@ namespace NetWares.Mappers
             entity.Tole = dto.Tole;
             entity.TrainingId = dto.TrainingId;
             entity.Occupation = dto.Occupation;
-            entity.DateOfBirth = dto.DateOfBirth;
+            entity.DateOfBirth = dto.DateOfBirth.ToUniversalTime();
             entity.Gender = dto.Gender;
             entity.CalculateAge();
         }
