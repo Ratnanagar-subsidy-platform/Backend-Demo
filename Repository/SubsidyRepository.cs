@@ -11,7 +11,7 @@ namespace NetWares.Repository
 
         public async Task<Subsidy?> GetByTitleAsync(string title)
         {
-            return await _dbSet.FirstOrDefaultAsync(s => s.Title == title);
+            return await _dbSet.FirstOrDefaultAsync(s => s.Title.Equals(title, StringComparison.CurrentCultureIgnoreCase));
         }
 }
 }

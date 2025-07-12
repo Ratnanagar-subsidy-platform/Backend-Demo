@@ -1,6 +1,3 @@
-using System.Security.Authentication;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using NetWares.Data;
 using NetWares.Models;
 using NetWares.Interfaces.Repository;
